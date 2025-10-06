@@ -12,7 +12,7 @@
 - Router0 の G0/0 インターフェースを trunk 接続し、サブインターフェースで各 VLAN をルーティング
 - 各 VLAN に PC を配置し、通信確認を行う
 
-![VLAN Topology](./topology.png)
+![VLAN Topology](topology.png)
 
 
 ---
