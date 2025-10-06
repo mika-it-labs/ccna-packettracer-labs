@@ -30,3 +30,5 @@ Switch(config)# vlan 30
 Switch(config-vlan)# name IT
 Switch(config)# interface fa0/1
 Switch(config-if)# switchport mode trunk
+## トポロジ (Topology)
+![VLAN Topology](./topology.png)
