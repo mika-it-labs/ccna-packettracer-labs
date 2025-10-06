@@ -1,0 +1,77 @@
+==============================
+Switch0 Configuration
+==============================
+
+enable
+configure terminal
+
+! VLAN 作成
+vlan 10
+ name Sales
+vlan 20
+ name HR
+vlan 30
+ name IT
+
+! ポート割り当て
+interface fa0/2
+ switchport mode access
+ switchport access vlan 10
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 20
+
+interface fa0/4
+ switchport mode access
+ switchport access vlan 30
+
+! Trunkポート設定
+interface fa0/1
+ switchport mode trunk
+
+end
+write memory
+
+==============================
+Router0 Configuration
+==============================
+
+enable
+configure terminal
+
+! サブインターフェース設定（Router-on-a-Stick）
+interface g0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+
+interface g0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+
+interface g0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+
+no shutdown
+end
+write memory
+
+==============================
+PC IP Settings
+==============================
+
+PC1 (Sales)
+ IP Address: 192.168.10.10
+ Subnet Mask: 255.255.255.0
+ Default Gateway: 192.168.10.1
+
+PC2 (HR)
+ IP Address: 192.168.20.10
+ Subnet Mask: 255.255.255.0
+ Default Gateway: 192.168.20.1
+
+PC3 (IT)
+ IP Address: 192.168.30.10
+ Subnet Mask: 255.255.255.0
+ Default Gateway: 192.168.30.1
