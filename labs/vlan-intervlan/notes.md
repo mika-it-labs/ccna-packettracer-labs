@@ -12,7 +12,8 @@
 - Router0 の G0/0 インターフェースを trunk 接続し、サブインターフェースで各 VLAN をルーティング
 - 各 VLAN に PC を配置し、通信確認を行う
 
-*(topology.png をここに添付)*
+![VLAN Topology](./topology.png)
+
 
 ---
 
@@ -30,5 +31,3 @@ Switch(config)# vlan 30
 Switch(config-vlan)# name IT
 Switch(config)# interface fa0/1
 Switch(config-if)# switchport mode trunk
-## トポロジ (Topology)
-![VLAN Topology](./topology.png)
